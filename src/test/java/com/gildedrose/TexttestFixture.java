@@ -23,7 +23,7 @@ public class TexttestFixture {
             days = Integer.parseInt(args[0]) + 1;
         }
 
-        for (int i = 0; i < days; i++) {
+        for (int i = 1; i < days + 1; i++) {
             System.out.println("-------- day " + i + " --------");
             System.out.println("name, sellIn, quality");
             for (Item item : items) {
