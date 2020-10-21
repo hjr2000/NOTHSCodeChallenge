@@ -53,6 +53,14 @@ Feature: Guilded Rose Feature
     Examples:
       | Initial Quality | Sell In  | Days In  | Final Quality Value |
       |    20           |   5      |    1     |     20              |
+      |    20           |   4      |    3     |     16              |
+      |    20           |   4      |    4     |     14              |
+      |    20           |   4      |    5     |     10              |
+      |    20           |   4      |    6     |      6              |
+      |    20           |   4      |    7     |      2              |
+      |    20           |   4      |    8     |      0              |
+      |     2           |   1      |    4     |      0              |
+      |     2           |   1      |    2     |      0              |
 
   @Runme
   Scenario Outline: Sulfuras Items Test
@@ -90,3 +98,5 @@ Feature: Guilded Rose Feature
       |    10           |   15     |   15     |     39              |
       |    10           |   15     |   16     |      0              |
       |    10           |   15     |   50     |      0              |
+      |    10           |   30     |   30     |     50              |
+      |    45           |   30     |   30     |     50              |
