@@ -1,4 +1,29 @@
-# Gilded Rose
+# Gilded Rose (Submission by Haden J-Robbins)
+
+### Assumptions
+
+It was necessary to make some assumptions to complete the task:
+
+- The initial quality value of any non ‘Sulfura’ item is arbitrary and can take any positive non-zero integer value up to a maximum of 50.
+
+- The rate of degradation of quality is one point per day for typical items prior to the sell by date, 2 points thereafter. However, the rate of degradation of quality is two points per day for ‘Conjured’ items prior to the sell by date, 4 points thereafter.
+
+- Aged Brie increases in quality at the rate of 1 point per day. It has no ‘SellIn’ value. It simply gets more and more valuable until it hits 50 quality points.
+
+- Items are listed at 12.00AM on the first day of listing. Therefore on the first day of listing, the item will have the initial quality value all day, until the moment the clock strikes midnight on day 2, at which point the quality value may change, depending on the type of item.
+
+### Challenge Specification - Minor Errors
+
+The specification is misleading at three points, as becomes evident when you reach some of the more detailed functional requirements later in the document.  
+
+These errors may or may not be part of the test, i.e. the intention could be to ensure that the candidate is capable of being a proper ‘Amigo’ (referring to the ‘Three Amigos’ review process!)
+
+
+
+
+
+
+# Gilded Rose (Original Challenge Documentation)
 
 ### Guidance Notes
 
