@@ -14,6 +14,9 @@ public class MyStepdefs {
     String itemInQuestion = "";
     String typicalItemName = "+5 Dexterity Vest";
     String agedBrieItem = "Aged Brie";
+    String conjuredItem = "Conjured Mana Cake";
+    String sulfuraItem = "Sulfuras, Hand of Ragnaros";
+    String backstagePassItem = "Backstage passes to a TAFKAL80ETC concert";
     int initialQuality = -99;
     int sellInValue = -99;
     int daysInValue = -99;
@@ -31,15 +34,33 @@ public class MyStepdefs {
         itemInQuestion = agedBrieItem;
     }
 
+    @Given("I have a Conjured item")
+    public void iHaveAConjuredItem() {
+
+        itemInQuestion = conjuredItem;
+    }
+
+    @Given("I have a Sulfuras item")
+    public void iHaveASulfuraItem() {
+
+        itemInQuestion = sulfuraItem;
+    }
+
+    @Given("I have a Backstage Pass item")
+    public void iHaveABackstagePassItem() {
+
+        itemInQuestion = backstagePassItem;
+    }
+
     @And("this item has an initial quality value of {int}")
     public void thisItemHasAnInitialQualityValueOfInitialQuality(Integer _initialQuality) {
-        //System.out.println("The initial quality is: " + _initialQuality);
+
         initialQuality = _initialQuality;
     }
 
     @And("a Sell In value of {int}")
     public void aSellInValueOfSellIn(Integer _sellInValue) {
-        //System.out.println("SellIn value: " + _sellInValue);
+
         sellInValue = _sellInValue;
     }
 
@@ -55,27 +76,17 @@ public class MyStepdefs {
         finalQualityValueExpected = _finalQualityValueExpected;
 
         items = new Item[] {
-//                new Item("+5 Dexterity Vest", 5, 10), //
-//                new Item("+5 Dexterity Vest", 10, 20), //
-//                new Item("Aged Brie", 2, 45), //
+
 //                new Item("Elixir of the Mongoose", 5, 7), //
                 new Item(itemInQuestion, sellInValue, initialQuality), //
-//                new Item("Sulfuras, Hand of Ragnaros", -1, 80),
-//                new Item("Backstage passes to a TAFKAL80ETC concert", 15, 10),
-//                new Item("Backstage passes to a TAFKAL80ETC concert", 10, 49),
-//                new Item("Backstage passes to a TAFKAL80ETC concert", 5, 49),
-//                // this conjured item does not work properly yet
-//                new Item("Conjured Mana Cake", 4, 20)
         };
 
         app = new GildedRose(items);
 
-
-
         int todaysQuality = -99;
+
         for (int i = 1; i < daysInValue + 1; i++)
         {
-
             System.out.println("-------- day " + i + " --------");
             System.out.println("name, sellIn, quality");
             for (Item item : items)
@@ -87,8 +98,6 @@ public class MyStepdefs {
             app.updateQuality();
         }
 
-        System.out.println("The final days quality was: " + todaysQuality);
         Assert.assertEquals(finalQualityValueExpected,todaysQuality);
     }
-
 }

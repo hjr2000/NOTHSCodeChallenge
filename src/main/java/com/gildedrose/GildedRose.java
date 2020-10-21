@@ -92,6 +92,7 @@ class GildedRose {
         if (item.sellIn < 1)
         {
             item.quality = 0;
+            return;
         }
 
         if (item.sellIn < 11){
