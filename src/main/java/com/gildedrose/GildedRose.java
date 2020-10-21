@@ -9,34 +9,32 @@ class GildedRose {
 
     public void updateQuality()
     {
-        for (int i = 0; i < items.length; i++)
-        {
-            switch (items[i].name)
-            {
+        for (Item item : items) {
+            switch (item.name) {
 
                 case "Aged Brie":
                     System.out.println("Aged Brie detected");
-                    HandleAgedBrieItemCase(items[i]);
+                    HandleAgedBrieItemCase(item);
                     break;
 
                 case "Backstage passes to a TAFKAL80ETC concert":
                     System.out.println("Backstage passes to a TAFKAL80ETC concert detected");
-                    HandleBackstagePassItemCase(items[i]);
+                    HandleBackstagePassItemCase(item);
                     break;
 
                 case "Sulfuras, Hand of Ragnaros":
                     System.out.println("Sulfuras, Hand of Ragnaros detected");
-                    HandleSulfurasItemCase(items[i]);
+                    HandleSulfurasItemCase(item);
                     break;
 
                 case "Conjured Mana Cake":
                     System.out.println("Conjured Mana Cake detected");
-                    HandleConjuredItemCase(items[i]);
+                    HandleConjuredItemCase(item);
                     break;
 
                 default:
                     System.out.println("Standard item detected");
-                    HandleStandardItemCase(items[i]);
+                    HandleStandardItemCase(item);
             }
 
 //            if (!items[i].name.equals("Aged Brie") && !items[i].name.equals("Backstage passes to a TAFKAL80ETC concert"))
