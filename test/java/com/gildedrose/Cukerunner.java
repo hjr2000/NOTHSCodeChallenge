@@ -21,7 +21,6 @@ import io.cucumber.junit.CucumberOptions;
 
         tags = "@Runme",
         monochrome=true
-
 )
 
 public class Cukerunner {
