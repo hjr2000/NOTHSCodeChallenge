@@ -16,15 +16,17 @@ class GildedRose {
 
                 case "Aged Brie":
                     System.out.println("Aged Brie detected");
-                    HandleAgedBrieCase(items[i]);
+                    HandleAgedBrieItemCase(items[i]);
                     break;
 
                 case "Backstage passes to a TAFKAL80ETC concert":
                     System.out.println("Backstage passes to a TAFKAL80ETC concert detected");
+                    HandleBackstagePassItemCase(items[i]);
                     break;
 
                 case "Sulfuras, Hand of Ragnaros":
                     System.out.println("Sulfuras, Hand of Ragnaros detected");
+                    HandleSulfurasItemCase(items[i]);
                     break;
 
                 case "Conjured Mana Cake":
@@ -126,7 +128,7 @@ class GildedRose {
         }
     }
 
-    public void HandleAgedBrieCase(Item item) {
+    public void HandleAgedBrieItemCase(Item item) {
 
         if (item.quality < 50)
         {
@@ -147,5 +149,40 @@ class GildedRose {
 
         if (item.quality < 0)
             item.quality = 0;
+    }
+
+    public void HandleBackstagePassItemCase(Item item) {
+
+        item.sellIn = item.sellIn - 1;
+
+        if (item.sellIn < 1)
+        {
+            item.quality = 0;
+            return;
+        }
+
+        if (item.sellIn < 11){
+            if (item.sellIn < 6){
+                item.quality = item.quality + 3;
+            }
+            else
+            {
+                item.quality = item.quality + 2;
+            }
+        }
+        else
+        {
+            item.quality = item.quality + 1;
+        }
+
+        if (item.quality > 50)
+        {
+            item.quality = 50;
+        }
+    }
+
+    public void HandleSulfurasItemCase(Item item)
+    {
+        item.quality = 80;
     }
 }
