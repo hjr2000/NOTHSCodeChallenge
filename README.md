@@ -22,7 +22,7 @@ These errors may or may not be part of the test, i.e. the intention could be to 
 
 - The directory structure supplied was not a standard Maven directory structure, however I have kept this structure for the time being. If the plan was to run the tests using Maven, then it would be advisable to restructure the application to use the standard Maven directory structure (https://maven.apache.org/guides/introduction/introduction-to-the-standard-directory-layout.html)
 
-- The features files are not in their own directory because IntelliJ will not support any new directory under the test folder, this could be because a non-standard Maven directory structure is in use.
+- The feature files are not in their own directory because IntelliJ will not support any new directory under the test folder, this could be because a non-standard Maven directory structure is in use.
 
 - The tests chosen were intended to cover a full range of conditions including boundaries around significant changes, dealing with situations where an item's quality value hit zero or maxed out etc   
 
